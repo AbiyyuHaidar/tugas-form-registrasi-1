@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #101820;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    form {
+      background-color: #1c1f26;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      width: 320px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #e10600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #b00d02;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Login Akun</h2>
+  <form id="formLogin">
+    <label for="nimLogin">Masukkan NIM:</label>
+    <input type="text" id="nimLogin" placeholder="Masukkan NIM anda" required>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById("formLogin").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nimLogin = document.getElementById("nimLogin").value;
+      const nimTerdaftar = localStorage.getItem("nim");
+      const namaLengkap = localStorage.getItem("namaLengkap");
+
+      if (nimLogin === nimTerdaftar) {
+        alert(`Selamat datang, ${namaLengkap}!`);
+      } else {
+        alert("NIM tidak terdaftar! Silakan registrasi terlebih dahulu.");
+      }
+    });
+  </script>
+
+</body>
+</html>

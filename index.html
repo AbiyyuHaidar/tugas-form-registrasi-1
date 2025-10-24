@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Registrasi F1 IDN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #101820;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    form {
+      background-color: #1c1f26;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      width: 320px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #e10600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #b00d02;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Registrasi</h2>
+  <form id="formRegistrasi">
+    <label for="namaDepan">Nama Depan:</label>
+    <input type="text" id="namaDepan" placeholder="Masukkan nama depan" required>
+
+    <label for="namaBelakang">Nama Belakang:</label>
+    <input type="text" id="namaBelakang" placeholder="Masukkan nama belakang" required>
+
+    <label for="nim">NIM:</label>
+    <input type="text" id="nim" placeholder="Masukkan NIM" required>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <script>
+    document.getElementById("formRegistrasi").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const namaDepan = document.getElementById("namaDepan").value;
+      const namaBelakang = document.getElementById("namaBelakang").value;
+      const nim = document.getElementById("nim").value;
+
+      // Simpan data ke localStorage
+      localStorage.setItem("namaLengkap", `${namaDepan} ${namaBelakang}`);
+      localStorage.setItem("nim", nim);
+
+      // Arahkan ke halaman berhasil
+      window.location.href = "berhasil regis.html";
+    });
+  </script>
+
+</body>
+</html>
