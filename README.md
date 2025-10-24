@@ -18,3 +18,4 @@ Aplikasi ini memiliki tiga halaman utama:
 - Login dengan validasi NIM sesuai data yang terdaftar
 
 **Berikut Live Preview nya**
+https://abiyyuhaidar.github.io/tugas-form-registrasi-1/
